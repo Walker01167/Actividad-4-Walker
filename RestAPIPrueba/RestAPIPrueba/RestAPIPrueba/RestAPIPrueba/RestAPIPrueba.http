@@ -1,0 +1,6 @@
+@RestAPIPrueba_HostAddress = http://localhost:5136
+
+GET {{RestAPIPrueba_HostAddress}}/usuario/
+Accept: application/json
+
+###

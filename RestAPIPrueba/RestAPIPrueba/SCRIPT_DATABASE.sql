@@ -1,0 +1,21 @@
+CREATE DATABASE ActividadUnidad4;
+
+USE ActividadUnidad4;
+
+CREATE TABLE Usuarios (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL CHECK (LEN(Name) >= 3),
+    Email NVARCHAR(255) NOT NULL UNIQUE CHECK (Email LIKE '_%@_%._%'),
+    PasswordHash NVARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Productos (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Code NVARCHAR(20) NOT NULL UNIQUE,
+    Name NVARCHAR(100) NOT NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    Category NVARCHAR(50) NOT NULL,
+    Warehouse NVARCHAR(100) NOT NULL,
+    Stock INT NOT NULL
+);
+
